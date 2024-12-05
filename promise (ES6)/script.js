@@ -80,3 +80,15 @@ Promise.race([test(1000), test(2000)]).then(() => {
 
 // }, 2000);
 
+
+'use strict';
+
+// console.log('Запрос данных...');
+
+// setTimeout(() => {
+//     console.log('Подоготовка данных...');
+    
+//     const 
+// },  2000);
+
+
