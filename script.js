@@ -302,6 +302,7 @@ window.addEventListener('DOMContentLoaded', function () {
     this.fetch('db.json')
         .then(data => data.json())
         .then(res => console.log(res));
+<<<<<<< HEAD:script.js
 
 });
 
@@ -314,6 +315,20 @@ window.addEventListener('DOMContentLoaded', function () {
 // })
 //     .then(response => response.json())
 //     .then(json => console.log(json))
+=======
+    
+});
+
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: "POST",
+    //     body: JSON.stringify({ name: 'Alex' }),
+    //     headers: {
+    //         'Content-type': 'application/json'
+    //     }
+    // })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json))
+>>>>>>> 23b1cf171bb36d5f2bc12be0910039ce81063857:js/script.js
 
 
 
