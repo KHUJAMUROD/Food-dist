@@ -219,10 +219,24 @@ window.addEventListener('DOMContentLoaded', function () {
     };
 
     forms.forEach(item => {
-        postData(item);
+        bindPostData(item);
     });
 
-    function postData(form) {
+
+    const  postData = async (url,data) => {
+const res =  await fetch(url, {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json'
+    },
+    body: data
+});
+
+
+return await res.json();
+    };
+
+    function bindPostData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -245,15 +259,9 @@ window.addEventListener('DOMContentLoaded', function () {
             });
 
 
-            fetch('server.php', {
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(object)
-            })
-                .then(data => data.text())
-                .then(data => {
+      
+            postData('server.php',JSON.stringify(object))
+                               .then(data => {
                     console.log(data);
                     showThanksModal(message.success);
                     statusMessage.remove();
@@ -302,7 +310,7 @@ window.addEventListener('DOMContentLoaded', function () {
     this.fetch('db.json')
         .then(data => data.json())
         .then(res => console.log(res));
-<<<<<<< HEAD:script.js
+ HEAD:script.js
 
 });
 
@@ -315,9 +323,8 @@ window.addEventListener('DOMContentLoaded', function () {
 // })
 //     .then(response => response.json())
 //     .then(json => console.log(json))
-=======
     
-});
+// });
 
     // fetch('https://jsonplaceholder.typicode.com/posts', {
     //     method: "POST",
@@ -328,7 +335,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // })
     //     .then(response => response.json())
     //     .then(json => console.log(json))
->>>>>>> 23b1cf171bb36d5f2bc12be0910039ce81063857:js/script.js
+// >>>>>>> 23b1cf171bb36d5f2bc12be0910039ce81063857:js/script.js
 
 
 
